@@ -1,0 +1,9 @@
+<?php
+	class DB extends SQlite3{
+		function __construct(){
+			$this->open("db.sqlite");
+		}
+	}
+
+	$db = new DB();
+?>

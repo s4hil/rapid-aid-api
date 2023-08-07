@@ -28,6 +28,7 @@
 				$response['status'] = true;
 				$response['data'] = "Account Created!";
 		}
+		
 	}
 	else{
 		$response['status'] = false;

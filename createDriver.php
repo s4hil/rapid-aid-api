@@ -13,22 +13,28 @@
 		$coordinates = $data['coordinates'];
 		$address = $data['address'];
 		$phone = $data['phone'];
-
 		$email = $data['email'];
 		$password = $data['password'];
+		$otp = $data['otp'];
 
-		$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`,`phone`) VALUES(
-				'$name',
-				'$email',
-				'$password',
-				'$coordinates',
-				'$address',
-				'$phone'
-			)";
-		$res = $db->exec($sql);
-		if ($res) {
-				$response['status'] = true;
-				$response['data'] = "Account Created!";
+		if ($_SESSION['OTP'] == $otp) {
+				$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`,`phone`) VALUES(
+					'$name',
+					'$email',
+					'$password',
+					'$coordinates',
+					'$address',
+					'$phone'
+				)";
+			$res = $db->exec($sql);
+			if ($res) {
+					$response['status'] = true;
+					$response['data'] = "Account Created!";
+			}
+		}
+		else{
+			$response['status'] = false;
+			$response['data'] = "Invalid OTP!";
 		}
 	}
 	else{

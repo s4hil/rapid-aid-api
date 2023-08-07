@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 	$number = $_GET['mobile'];
 	function sendSMS($num) {
 		$otp = rand(1000, 9999);

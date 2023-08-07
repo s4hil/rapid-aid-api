@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 	$response = array('status' => false);
 
 	$data = json_decode(file_get_contents("php://input"), true);

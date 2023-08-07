@@ -7,11 +7,14 @@
 
 	if (!empty($data)) {
 
-		if ($data['email'] != "" || $data['password'] != "") {
-			$email = $data['email'];
-			$password = md5($data['password']);
+		
 
-			$sql = "SELECT * FROM `_users` WHERE `email` = '$email' AND `password` = '$password'";
+		if ($data['email'] != "" || $data['password'] != "") {
+
+			$email = $data['email'];
+			$password = $data['password'];
+
+			$sql = "SELECT * FROM `_drivers` WHERE `email` = '$email' AND `password` = '$password'";
 			$res = $db->query($sql);
 			if ($user = $res->fetchArray(SQLITE3_ASSOC)) {
 				if ($user['email'] == $email && $user['password'] == $password){

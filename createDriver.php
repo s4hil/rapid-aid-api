@@ -9,11 +9,13 @@
 
 		$name = $data['name'];
 		$email = $data['email'];
-		$password = md5($data['password']);
+		$password = $data['password'];
 		$coordinates = $data['coordinates'];
 		$address = $data['address'];
 		$phone = $data['phone'];
+
 		$email = $data['email'];
+		$password = $data['password'];
 
 		$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`) VALUES(
 				'$name',

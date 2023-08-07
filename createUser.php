@@ -15,12 +15,13 @@
 		$phone = $data['phone'];
 		$email = $data['email'];
 
-		$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`) VALUES(
+		$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`, `phone`) VALUES(
 				'$name',
 				'$email',
 				'$password',
 				'$coordinates',
-				'$address'
+				'$address',
+				'$phone'
 			)";
 		$res = $db->exec($sql);
 		if ($res) {

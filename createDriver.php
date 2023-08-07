@@ -17,12 +17,13 @@
 		$email = $data['email'];
 		$password = $data['password'];
 
-		$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`) VALUES(
+		$sql = "INSERT INTO '_users' (`name`,`email`,`password`,`coordinates`,`address`,`phone`) VALUES(
 				'$name',
 				'$email',
 				'$password',
 				'$coordinates',
-				'$address'
+				'$address',
+				'$phone'
 			)";
 		$res = $db->exec($sql);
 		if ($res) {

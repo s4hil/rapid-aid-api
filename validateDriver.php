@@ -18,8 +18,8 @@
 			$res = $db->query($sql);
 			if ($user = $res->fetchArray(SQLITE3_ASSOC)) {
 				if ($user['email'] == $email && $user['password'] == $password){
-
 					$response['status'] = true;
+					$response['driverName'] = $user['name'];
 				}
 				else{
 					$response['status'] = false;
